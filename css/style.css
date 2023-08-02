@@ -5,6 +5,7 @@
     --headerColor: #000;
     --tableCharactersColor: #171717;
     --fontColor: #e6a902;
+    --footerColor: #171717; 
 }
 
 /* VARIABLES */
@@ -76,29 +77,48 @@ body {
     color: var(--fontColor);
 }  
 
-.wrapperClass{
+.character__wrapperClass{
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.nickname{
+.character__nickname{
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.date{
+.character__date{
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.price{
+.character__price{
     width: 25%;
     display: flex;
     justify-content: center;
 }
 /* MAIN */
 
+/* FOOTER */
+.footer{
+    margin-top: 40px;
+    height: 120px;
+    background-color: var(--footerColor);
+}
 
+.footer .wrapper{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .wrapper .author{
+    margin: 0px 20px;
+    text-align: center;
+    color: var(--fontColor);
+}
+/* FOOTER */
