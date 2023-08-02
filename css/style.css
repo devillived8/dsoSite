@@ -46,6 +46,22 @@ body {
     margin-top: 40px;
 }
 
+.searchWrapper{
+    height: 80px;
+}
+
+.search{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e6a902;
+    border-bottom: 0px;
+    font-size: 28px;
+}
+
+.search:focus{
+    background: #a87b00bd;
+}
+
 .tableCharacters {
     width: inherit;
     height: inherit;
