@@ -7,34 +7,32 @@ ajaxSelectAllAccounts(1);
 function checkSearchInput() {
     let search = document.querySelector(".search");
     let timerId;
+
     search.addEventListener("input", () => {
         clearTimeout(timerId);
-        let characterWrapper = document.querySelector(".characterWrapper");
 
-        if (characterWrapper !== null) {
-            characterWrapper.remove();
-        }
+
+        const characterWrapper = document.querySelectorAll(".characterWrapper");
+
+        characterWrapper.forEach(item => {
+            item.remove();
+        });
 
         let searchText = search.value;
 
-
         if (search.value == false) {
-            if (characterWrapper !== null) {
-                characterWrapper.remove();
-            }
+
             console.log("false");
             timerId = setTimeout(() => {
                 ajaxSelectAllAccounts(1);
-            }, 1000);
-            
+            }, 500);
+
         } else {
-            if (characterWrapper !== null) {
-                characterWrapper.remove();
-            }
+
             console.log(search.value);
             timerId = setTimeout(() => {
                 ajaxSelectAllAccounts(2, searchText);
-            }, 1000);
+            }, 500);
         }
 
 
