@@ -1,11 +1,10 @@
-
 /* VARIABLES */
 :root {
     --bodyColor: #000;
     --headerColor: #000;
     --tableCharactersColor: #171717;
     --fontColor: #e6a902;
-    --footerColor: #171717; 
+    --footerColor: #171717;
 }
 
 /* VARIABLES */
@@ -19,6 +18,55 @@
 body {
     background-color: var(--bodyColor);
 }
+
+.loaderWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-loader{
+    display:flex;
+    position: relative;
+    align-content: space-around;
+    justify-content: center;
+  }
+  .loader-svg{
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    fill: none;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke: #e6a902;
+  }
+  .loader-svg.bg{
+    stroke-width: 8px;
+    stroke: rgb(207, 205, 245);
+  }
+
+  .animate{
+    stroke-dasharray: 242.6;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+  }
+  
+  @keyframes fill-animation{
+    0%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 0;
+    }
+    50%{
+      stroke-dasharray: 141.3;
+      stroke-dashoffset: 141.3;
+    }
+    100%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 282.6;
+    }
+  }
 
 /* MAIN CLASSES */
 
@@ -46,11 +94,11 @@ body {
     margin-top: 40px;
 }
 
-.searchWrapper{
+.searchWrapper {
     height: 80px;
 }
 
-.search{
+.search {
     width: 100%;
     height: 100%;
     border: 1px solid #e6a902;
@@ -60,7 +108,7 @@ body {
     color: var(--fontColor);
 }
 
-.search:focus{
+.search:focus {
     background: #a87b00bd;
 }
 
@@ -70,7 +118,7 @@ body {
     background: var(--tableCharactersColor);
 }
 
-.info{
+.info {
     width: inherit;
     height: 100px;
     border: 1px solid #e6a902;
@@ -80,46 +128,56 @@ body {
     color: var(--fontColor);
 }
 
-.info p{
+.info p {
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.character{
+.info__Date {
+    cursor: pointer;
+}
+
+.info__Price {
+    cursor: pointer;
+}
+
+.character {
     display: flex;
     align-items: center;
     height: 200px;
     width: 100%;
     border: 1px solid #e6a902;
     color: var(--fontColor);
-}  
+}
 
-.character__wrapperClass{
+.character__wrapperClass {
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.character__nickname{
+.character__nickname {
     width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.character__date{
+.character__date {
     width: 25%;
     display: flex;
     justify-content: center;
+
 }
 
-.character__price{
+.character__price {
     width: 25%;
     display: flex;
     justify-content: center;
+
 }
 
-.characterNotFounds{
+.characterNotFounds {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,25 +187,27 @@ body {
     width: 100%;
     border: 1px solid #e6a902;
 }
+
 /* MAIN */
 
 /* FOOTER */
-.footer{
+.footer {
     margin-top: 40px;
     height: 120px;
     background-color: var(--footerColor);
 }
 
-.footer .wrapper{
+.footer .wrapper {
     height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footer .wrapper .author{
+.footer .wrapper .author {
     margin: 0px 20px;
     text-align: center;
     color: var(--fontColor);
 }
+
 /* FOOTER */

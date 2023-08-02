@@ -11,15 +11,26 @@
 
 <body>
 
+    <!-- LOADER -->
+    <div class="loaderWrapper">
+        <div class="svg-loader">
+            <svg class="svg-container" height="60" width="60" viewBox="0 0 100 100">
+                <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+                <circle class="loader-svg animate" cx="50" cy="50" r="45"></circle>
+            </svg>
+        </div>
+    </div>
+    <!-- LOADER -->
     <!-- HEADER -->
     <header class="header">
         <div class="wrapper">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="./img/logo.png" alt="logo" class="logo">
             </a>
         </div>
     </header>
     <!-- HEADER -->
+    <!-- MAIN -->
     <main class="main">
         <div class="wrapper">
             <div class="tableCharacters">
@@ -29,13 +40,15 @@
                 <div class="info">
                     <p class="info__Class">Класс</p>
                     <p class="info__Nickname">Никнейм</p>
-                    <p class="info__Date">Дата получения</p>
-                    <p class="info__Price">Цена</p>
+                    <p class="info__Date">Дата получения &#8593;&#8595;</p>
+                    <p class="info__Price">Цена &#8593;&#8595;</p>
                 </div>
 
             </div>
         </div>
     </main>
+    <!-- MAIN -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="wrapper">
             <a href="https://vk.com/devillived8" target="_blank" rel="author" class="author">
@@ -48,7 +61,9 @@
             </a>
         </div>
     </footer>
+    <!-- FOOTER -->
+    <!-- SCRIPTS -->
     <script src="./js/main.js"></script>
+    <!-- SCRIPTS -->
 </body>
-
 </html>
