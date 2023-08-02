@@ -24,7 +24,7 @@
         <div class="wrapper">
             <div class="tableCharacters">
                 <form class="searchWrapper" method="GET">
-                    <input type="search" name="search" id="search" class="search">
+                    <input type="search" name="search" id="search" class="search" placeholder="Искать по никнейму">
                 </form>
                 <div class="info">
                     <p class="info__Class">Класс</p>

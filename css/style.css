@@ -56,6 +56,8 @@ body {
     border: 1px solid #e6a902;
     border-bottom: 0px;
     font-size: 28px;
+    text-align: center;
+    color: var(--fontColor);
 }
 
 .search:focus{
@@ -115,6 +117,17 @@ body {
     width: 25%;
     display: flex;
     justify-content: center;
+}
+
+.characterNotFounds{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 30px;
+    height: 200px;
+    width: 100%;
+    border: 1px solid #e6a902;
 }
 /* MAIN */
 
