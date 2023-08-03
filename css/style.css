@@ -19,6 +19,29 @@ body {
     background-color: var(--bodyColor);
 }
 
+/* Для WebKit-браузеров, таких как Chrome */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикального скроллбара */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #866301; /* Цвет ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e6a902; /* Цвет ползунка при наведении */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #171717; /* Цвет трека */
+    border-radius: 0px; /* Скругление углов трека */
+  }
+  
+  /* ::-webkit-scrollbar-track:hover {
+    
+  } */
+
 .loaderWrapper{
     position: absolute;
     width: 100%;
@@ -122,7 +145,6 @@ body {
     width: inherit;
     height: 100px;
     border: 1px solid #e6a902;
-    border-bottom: none;
     display: flex;
     align-items: center;
     color: var(--fontColor);

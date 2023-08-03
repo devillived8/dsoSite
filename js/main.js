@@ -15,35 +15,29 @@ function loader() {
 }
 
 //Тут функция самого события на поиск
+let xhr;
 function checkSearchInput() {
     let search = document.querySelector(".search");
-    let timerId;
 
     search.addEventListener("input", () => {
-        clearTimeout(timerId);
-
+                // Отменяем предыдущий активный запрос, если он есть
+                if (xhr) {
+                    xhr.abort();
+                }
 
         const characterWrapper = document.querySelectorAll(".characterWrapper");
 
         characterWrapper.forEach(item => {
-            item.remove();
+                item.remove()
         });
 
         let searchText = search.value;
 
         if (search.value == false) {
-
-            console.log("false");
-            timerId = setTimeout(() => {
                 ajaxSelectAllAccounts(1);
-            }, 700);
 
         } else {
-
-            console.log(search.value);
-            timerId = setTimeout(() => {
                 ajaxSelectAllAccounts(2, searchText);
-            }, 700);
         }
 
 
@@ -80,6 +74,11 @@ function ajaxSelectAllAccounts(selectFunction, additionalParameter) {
 //Тут из бд происходит вывод на страницу ()
 function addAllAccounts(data) {
     let tableCharacters = document.querySelector(".tableCharacters");
+    const characterWrapper = document.querySelectorAll(".characterWrapper");
+  
+    characterWrapper.forEach(item => {
+            item.remove();
+    });
     let htmlData = document.createElement("div");
     htmlData.classList.add("characterWrapper");
     htmlData.innerHTML = data;
@@ -100,14 +99,20 @@ function sorting() {
             dateSwitch = true;
             date.textContent = "Дата получения \u2193";
             sortByAscDate();
+            priceSwitch = "notSelected";
+            price.textContent = "Цена \u2191\u2193";
         } else if (dateSwitch == true) {
             dateSwitch = false;
             date.textContent = "Дата получения \u2191";
             sortByDescDate();
+            priceSwitch = "notSelected";
+            price.textContent = "Цена \u2191\u2193";
         } else if (dateSwitch == false) {
             dateSwitch = true;
             date.textContent = "Дата получения \u2193";
             sortByAscDate();
+            priceSwitch = "notSelected";
+            price.textContent = "Цена \u2191\u2193";
         }
 
     });
@@ -121,15 +126,20 @@ function sorting() {
             priceSwitch = true;
             price.textContent = "Цена \u2193";
             sortByAscPrice();
-
+            dateSwitch = "notSelected";
+            date.textContent = "Дата получения \u2191\u2193";
         } else if (priceSwitch == true) {
             priceSwitch = false;
             price.textContent = "Цена \u2191";
             sortByDescPrice();
+            dateSwitch = "notSelected";
+            date.textContent = "Дата получения \u2191\u2193";
         } else if (priceSwitch == false) {
             priceSwitch = true;
             price.textContent = "Цена \u2193";
             sortByAscPrice();
+            dateSwitch = "notSelected";
+            date.textContent = "Дата получения \u2191\u2193";
         }
     });
 }
@@ -148,7 +158,6 @@ function sortByAscDate() {
     itemsArray.sort((a, b) => {
         const dateA = new Date(a.getAttribute("data-date"));
         const dateB = new Date(b.getAttribute("data-date"));
-        console.log(dateA);
         return dateB - dateA;
     });
 
@@ -178,7 +187,6 @@ function sortByDescDate() {
     itemsArray.sort((a, b) => {
         const dateA = new Date(a.getAttribute("data-date"));
         const dateB = new Date(b.getAttribute("data-date"));
-        console.log(dateA);
         return dateA - dateB;
     });
 
@@ -209,7 +217,6 @@ function sortByAscPrice() {
     itemsArray.sort((a, b) => {
         const dateA = new Date(a.getAttribute("data-price"));
         const dateB = new Date(b.getAttribute("data-price"));
-        console.log(dateA);
         return dateB - dateA;
     });
 
@@ -239,7 +246,6 @@ function sortByDescPrice() {
     itemsArray.sort((a, b) => {
         const dateA = new Date(a.getAttribute("data-price"));
         const dateB = new Date(b.getAttribute("data-price"));
-        console.log(dateA);
         return dateA - dateB;
     });
 
