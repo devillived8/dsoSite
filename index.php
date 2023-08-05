@@ -50,11 +50,11 @@ if (!isset($_SESSION['userId'])) {
         <div class="wrapper">
             <div class="tableCharacters">
                 <form class="searchWrapper" method="GET">
-                    <input type="search" name="search" id="search" class="search" placeholder="Искать по никнейму">
+                    <input type="search" name="search" id="search" class="search" placeholder="Искать по id">
                 </form>
                 <div class="info">
                     <p class="info__Class">Класс</p>
-                    <p class="info__Nickname">Никнейм</p>
+                    <p class="info__Id">Id</p>
                     <p class="info__Date">Дата получения &#8593;&#8595;</p>
                     <p class="info__Price">Цена &#8593;&#8595;</p>
                 </div>

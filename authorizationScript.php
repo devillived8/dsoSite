@@ -34,17 +34,6 @@ if ($stmt) {
         // Проверка хеша пароля
         if (password_verify($userPassword, $row['password'])) {
             // Логин и пароль совпадают
-            // Устанавливаем время жизни сессии в секундах (например, 1 час)
-            $sessionLifetime = 3600;
-
-            // Устанавливаем время жизни куки сессии в браузере (также в секундах)
-            $cookieLifetime = $sessionLifetime;
-
-            // Устанавливаем параметры сессии
-            session_set_cookie_params($cookieLifetime, "/", "localhost", false, true);
-
-            // Устанавливаем время жизни сессии
-            ini_set("session.gc_maxlifetime", $sessionLifetime);
             session_start();
             $_SESSION['userId'] = $row['id'];
             header("Location: index.php");

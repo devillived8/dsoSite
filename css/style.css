@@ -179,7 +179,7 @@ body {
     justify-content: center;
 }
 
-.character__nickname {
+.character__idCharacter {
     width: 25%;
     display: flex;
     justify-content: center;

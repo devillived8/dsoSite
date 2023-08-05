@@ -1,3 +1,23 @@
+<?php
+
+// Начинаем или возобновляем сессию
+session_start();
+
+// Проверяем, есть ли в сессии информация о пользователе
+if (!isset($_SESSION['userId'])) {
+    // Если пользователя нет в сессии, перенаправляем на страницу входа
+    header("Location: authorization.php");
+    exit();
+}
+
+
+// $nickname = $_GET['nickname'];
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,26 +48,57 @@
         </div>
         <div class="imageCharacter">
 
-        <div class="prev">
-            <img src="./img/prev.svg" alt="">
-        </div>
-        <div class="next">
-            <img src="./img/next.svg" alt="">
-        </div>
+            <div class="prev">
+                <img src="./img/prev.svg" alt="">
+            </div>
+            <div class="next">
+                <img src="./img/next.svg" alt="">
+            </div>
         </div>
     </div>
     <main class="main">
         <div class="wrapper">
             <div class="characterInfo">
                 <div class="fotoCarousel">
-                    <img src="./img/war/war1.jpg" alt="">
- 
+                    <?php
+                    $img = $_GET['img'];
+                    $folderPath = "./img/".$img;
+                    $imageExtensions = ["jpg", "jpeg", "png", "gif"]; // Расширения изображений
+                    
+                    $images = [];
+
+                    foreach ($imageExtensions as $extension) {
+                        $images = array_merge($images, glob($folderPath . "/*." . $extension));
+                    }
+
+                    foreach ($images as $image) {
+                        echo "<img src='{$image}' alt=''>";
+                    }
 
 
- 
-   
+                    ?>
+                </div>
+                <div class="descriptionAccount">
+                    <?php 
+                    $idCharacter = $_GET['idCharacter'];
+                    $class = $_GET['class'];
+                    $date = $_GET['date'];
+                    $description = $_GET['description'];
+                    $price = $_GET['price'];
+                    
+                    
+                    echo "
+                    
+                    <p class='id'>Id: {$idCharacter}</p>
+                    <p class='class'>Класс: {$class}</p>
+                    <p class='date'>Дата получения: {$date}</p>
+                    <p class='description'>Описание: {$description}</p>
+                    <div class='price'>Цена: {$price}</div>
+                    "
 
 
+
+                    ?>
                 </div>
             </div>
         </div>

@@ -112,3 +112,40 @@
     height: 200px;
     object-fit: cover;
 } 
+
+.descriptionAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.descriptionAccount p{
+    margin: 30px 0px;
+    color: #e6a902;
+}
+
+.id{
+    margin-top: 40px;
+}
+
+
+.class{
+
+}
+
+.date{
+
+}
+
+.description{
+
+}
+
+.price{
+    background-color: #e6a902;
+    height: 40px;
+    max-width: 120px;
+    width: 100%;
+    margin-bottom: 40px;
+}
