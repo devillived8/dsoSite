@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/authorization.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <title>dsoSite</title>
 </head>
 
@@ -22,26 +24,21 @@
     <!-- MAIN -->
     <main class="main">
         <div class="wrapper">
-            
+            <div class="formWrapper">
+                <form action="authorizationScript.php" method="POST" class="authorizationForm">
+                    <h1>Login</h1>
+                    <input type="text" name="nickname" id="nickname" placeholder="Логин">
+                    <input type="password" name="password" id="password" placeholder="Пароль">
+                    <input type="submit" value="Авторизоваться" id="enter">
+                </form>
+            </div>
         </div>
     </main>
     <!-- MAIN -->
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="wrapper">
-            <a href="https://vk.com/devillived8" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
-                <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
-            </a>
-            <a href="https://vk.com/id229840958" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
-                <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
-            </a>
-        </div>
-    </footer>
-    <!-- FOOTER -->
+    
     <!-- SCRIPTS -->
-    <script src="./js/main.js"></script>
+    <script src="./js/authorization.js"></script>
     <!-- SCRIPTS -->
 </body>
+
 </html>

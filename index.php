@@ -1,3 +1,17 @@
+<?php
+// Начинаем или возобновляем сессию
+session_start();
+
+// Проверяем, есть ли в сессии информация о пользователе
+if (!isset($_SESSION['userId'])) {
+    // Если пользователя нет в сессии, перенаправляем на страницу входа
+    header("Location: authorization.php");
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

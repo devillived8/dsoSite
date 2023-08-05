@@ -62,6 +62,8 @@ input::-ms-clear {
 	display: none;
 }
 
+
+
 button, input[type="submit"] {
     display: inline-block;
     box-shadow: none;
