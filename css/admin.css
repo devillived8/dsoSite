@@ -1,0 +1,65 @@
+.adminPanel{
+    max-width: 1180px;
+    width: 100%;
+    background-color: #171717;
+    height: 800px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.addCharacterWrapper{
+    width: 50%;
+    border: 1px solid #e6a902;
+    height: auto;
+}
+
+
+
+.addCharacterWrapper form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+
+.addCharacterTitle{
+    color: #e6a902;
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.addCharacterWrapper form textarea{
+    border: 1px solid #e6a902;
+    background-color: #fff;
+    color: #000;
+    margin: 10px 0px;
+    width: 50%;
+}
+
+.addCharacterWrapper form select{
+    border: 1px solid #e6a902;
+    background-color: #fff;
+    color: #000;
+    margin: 10px 0px;
+    width: 50%;
+}
+
+.addCharacterWrapper form input{
+    border: 1px solid #e6a902;
+    background-color: #fff;
+    color: #000;
+    margin: 10px 0px;
+    width: 50%;
+}
+
+.deleteCharacterWrapper{
+    width: 50%;
+    border: 1px solid #e6a902;
+    height: auto;
+}
