@@ -66,12 +66,8 @@ if (!isset($_SESSION['userId'])) {
     <!-- FOOTER -->
     <footer class="footer">
         <div class="wrapper">
-            <a href="https://vk.com/devillived8" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
-                <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
-            </a>
-            <a href="https://vk.com/id229840958" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
+            <a href="https://vk.com/ipixelm" target="_blank" rel="author" class="author">
+                <p>Для покупки аккаунтов обращаться сюда</p>
                 <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
             </a>
         </div>

@@ -34,23 +34,29 @@ if ($stmt) {
         // Проверка хеша пароля
         if (password_verify($userPassword, $row['password'])) {
             // Логин и пароль совпадают
+            // Устанавливаем время жизни сессии в секундах (например, на 1 час)
+            $sessionLifetime = 3600; // 1 час
+            session_set_cookie_params($sessionLifetime);
             session_start();
             $_SESSION['userId'] = $row['id'];
             header("Location: index.php");
             exit();
         } else {
             // Пароль неверный
-            header("Location: authorization.php");
+            header("Location: authorization.php?error=error");
         }
     } else {
         // Пользователь с таким логином не найден
-        header("Location: authorization.php");
+
+        header("Location: authorization.php?error=error");
+
     }
 
     // Закрываем подготовленное выражение
     $stmt->close();
 } else {
     echo "Error in prepared statement!";
+
 }
 
 $mysqli->close();

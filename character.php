@@ -35,7 +35,7 @@ if (!isset($_SESSION['userId'])) {
     <!-- HEADER -->
     <header class="header">
         <div class="wrapper">
-            <a href="#">
+            <a href="index.php">
                 <img src="./img/logo.png" alt="logo" class="logo">
             </a>
         </div>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['userId'])) {
                 <div class="fotoCarousel">
                     <?php
                     $img = $_GET['img'];
-                    $folderPath = "./img/".$img;
+                    $folderPath = "./img/" . $img;
                     $imageExtensions = ["jpg", "jpeg", "png", "gif"]; // Расширения изображений
                     
                     $images = [];
@@ -79,14 +79,15 @@ if (!isset($_SESSION['userId'])) {
                     ?>
                 </div>
                 <div class="descriptionAccount">
-                    <?php 
+                    <h1 class="descriptionTitle">Информация об аккаунте</h1>
+                    <?php
                     $idCharacter = $_GET['idCharacter'];
                     $class = $_GET['class'];
                     $date = $_GET['date'];
                     $description = $_GET['description'];
                     $price = $_GET['price'];
-                    
-                    
+
+
                     echo "
                     
                     <p class='id'>Id: {$idCharacter}</p>
@@ -98,7 +99,7 @@ if (!isset($_SESSION['userId'])) {
 
 
 
-                    ?>
+                        ?>
                 </div>
             </div>
         </div>
@@ -107,12 +108,8 @@ if (!isset($_SESSION['userId'])) {
     <!-- FOOTER -->
     <footer class="footer">
         <div class="wrapper">
-            <a href="https://vk.com/devillived8" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
-                <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
-            </a>
-            <a href="https://vk.com/id229840958" target="_blank" rel="author" class="author">
-                <p>Создатель</p>
+            <a href="https://vk.com/ipixelm" target="_blank" rel="author" class="author">
+                <p>Для покупки аккаунтов обращаться сюда</p>
                 <img class="vkIcon" src="./img/vkIcon.png" width="60px" alt="vkIcon">
             </a>
         </div>

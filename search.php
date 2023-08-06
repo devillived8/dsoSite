@@ -48,7 +48,7 @@ function selectAllAcounts()
             ;
 
             echo "
-                            <a href='character.php?idCharacter=". urlencode($row['idCharacter']). "&class=" . urlencode($row['class']) . "&price=" . urlencode($row['price']) . "&date=" . urlencode($row['date']) . "&img=" . urlencode($row['img']) . "&description=" . urlencode($row['description']) ."' class='linkOnCharacter' data-date='{$row['date']}' data-price='{$row['price']}'>
+                            <a target='_blank' href='character.php?idCharacter=". urlencode($row['idCharacter']). "&class=" . urlencode($row['class']) . "&price=" . urlencode($row['price']) . "&date=" . urlencode($row['date']) . "&img=" . urlencode($row['img']) . "&description=" . urlencode($row['description']) ."' class='linkOnCharacter' data-date='{$row['date']}' data-price='{$row['price']}'>
                             <div class='character'>
                                 <div class='character__wrapperClass'>
                                     <img src='./img/{$class}' alt='dwarf' class='class'>
@@ -118,7 +118,7 @@ function selectAccountByNickname()
             }
 
             echo "
-            <a href='character.php?idCharacter=". urlencode($row['idCharacter'])."&description=" . urlencode($row['description']) . "&class=" . urlencode($row['class']) . "&price=" . urlencode($row['price']) . "&date=" . urlencode($row['date']) . "&img=" . urlencode($row['img']) . "' class='linkOnCharacter' data-date='{$row['date']}' data-price='{$row['price']}'>
+            <a target='_blank' href='character.php?idCharacter=". urlencode($row['idCharacter'])."&description=" . urlencode($row['description']) . "&class=" . urlencode($row['class']) . "&price=" . urlencode($row['price']) . "&date=" . urlencode($row['date']) . "&img=" . urlencode($row['img']) . "' class='linkOnCharacter' data-date='{$row['date']}' data-price='{$row['price']}'>
                 <div class='character'>
                     <div class='character__wrapperClass'>
                         <img src='./img/{$class}' alt='{$row['class']}' class='class'>

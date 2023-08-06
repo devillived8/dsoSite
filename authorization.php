@@ -27,6 +27,15 @@
             <div class="formWrapper">
                 <form action="authorizationScript.php" method="POST" class="authorizationForm">
                     <h1>Login</h1>
+                    <?php
+                    // Проверяем наличие параметра ошибки в URL
+                    if (isset($_GET['error'])) {
+                        $error = $_GET['error'];
+                        if ($error === "error") {
+                            echo "<p class='errorAuthorization'>Что-то пошло не так!</p>";
+                        } 
+                    }
+                    ?>
                     <input type="text" name="nickname" id="nickname" placeholder="Логин">
                     <input type="password" name="password" id="password" placeholder="Пароль">
                     <input type="submit" value="Авторизоваться" id="enter">
@@ -35,7 +44,7 @@
         </div>
     </main>
     <!-- MAIN -->
-    
+
     <!-- SCRIPTS -->
     <script src="./js/authorization.js"></script>
     <!-- SCRIPTS -->
