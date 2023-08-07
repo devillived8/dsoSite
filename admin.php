@@ -1,16 +1,4 @@
 <?php
-// Начинаем или возобновляем сессию
-session_start();
-
-// Проверяем, есть ли в сессии информация о пользователе
-if (!isset($_SESSION['userId'])) {
-    // Если пользователя нет в сессии, перенаправляем на страницу входа
-    header("Location: authorization.php");
-    exit();
-}
-?>
-
-<?php
 
 // Начинаем или возобновляем сессию
 session_start();
@@ -59,9 +47,17 @@ if (!isset($_SESSION['userId'])) {
             <div class="adminPanel">
                 <!-- ДОБАВЛЕНИЯ ПЕРСОНАЖА -->
                 <div class="addCharacterWrapper">
-                    <form action="" method="POST" class="addCharacter" enctype="multipart/form-data">
+                    <form action="adminScript.php" method="POST" class="addCharacter" enctype="multipart/form-data">
                         <h1 class="addCharacterTitle">Добавить персонажа в бд</h1>
                         <input type="text" name="idCharacter" id="idCharacter" placeholder="Id персонажа">
+                        <select name="server" id="server">
+                            <option value="Grimmag">Grimmag</option>
+                            <option value="Heredur">Heredur</option>
+                            <option value="Werian">Werian</option>
+                            <option value="Harold">Harold</option>
+                            <option value="Agathon">Agathon</option>
+                            <option value="Tegan">Tegan</option>
+                        </select>
                         <select name="class" id="class">
                             <option value="dwarf">Паромеханист</option>
                             <option value="archer">Следопыт</option>
@@ -74,7 +70,7 @@ if (!isset($_SESSION['userId'])) {
                         <input type="text" name="wayToGet" id="wayToGet" placeholder="Способ получения">
                         <textarea name="description" id="description" placeholder="Описание персонажа" cols="30"
                             rows="10"></textarea>
-                        <input type="file" name="imageFile" id="imageFile" multiple>
+                        <input type="file" name="imageFile[]" id="imageFile" multiple>
                         <input type="submit" value="Добавить">
                     </form>
                 </div>

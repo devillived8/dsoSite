@@ -62,7 +62,7 @@ if (!isset($_SESSION['userId'])) {
                 <div class="fotoCarousel">
                     <?php
                     $img = $_GET['img'];
-                    $folderPath = "./img/" . $img;
+                    $folderPath = "./" . $img;
                     $imageExtensions = ["jpg", "jpeg", "png", "gif"]; // Расширения изображений
                     
                     $images = [];
@@ -86,14 +86,17 @@ if (!isset($_SESSION['userId'])) {
                     $date = $_GET['date'];
                     $description = $_GET['description'];
                     $price = $_GET['price'];
-
+                    $wayToGet = $_GET['wayToGet'];
+                    $server = $_GET['server'];
 
                     echo "
                     
                     <p class='id'>Id: {$idCharacter}</p>
+                    <p class='server'>Сервер: {$server}</p>
                     <p class='class'>Класс: {$class}</p>
                     <p class='date'>Дата получения: {$date}</p>
                     <p class='description'>Описание: {$description}</p>
+                    <p class='wayToGet'>Способ получения: {$wayToGet}</p>
                     <div class='price'>Цена: {$price}</div>
                     "
 
