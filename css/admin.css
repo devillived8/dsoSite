@@ -1,4 +1,4 @@
-.adminPanel{
+.adminPanel {
     max-width: 1180px;
     width: 100%;
     background-color: #171717;
@@ -10,7 +10,9 @@
     flex-wrap: wrap;
 }
 
-.addCharacterWrapper{
+
+/* ДОБАВИТЬ ПЕРСОНАЖА */
+.addCharacterWrapper {
     width: 50%;
     border: 1px solid #e6a902;
     height: auto;
@@ -18,23 +20,23 @@
 
 
 
-.addCharacterWrapper form{
+.addCharacterWrapper form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
 
 
-.addCharacterTitle{
+.addCharacterTitle {
     color: #e6a902;
     font-size: 30px;
     margin: 10px 0px;
 }
 
-.addCharacterWrapper form textarea{
+.addCharacterWrapper form textarea {
     border: 2px solid #e6a902;
     background-color: #fff;
     color: #000;
@@ -42,7 +44,7 @@
     width: 50%;
 }
 
-.addCharacterWrapper form select{
+.addCharacterWrapper form select {
     border: 2px solid #e6a902;
     background-color: #fff;
     color: #000;
@@ -50,7 +52,7 @@
     width: 50%;
 }
 
-.addCharacterWrapper form input{
+.addCharacterWrapper form input {
     border: 2px solid #e6a902;
     background-color: #fff;
     color: #000;
@@ -58,8 +60,59 @@
     width: 50%;
 }
 
-.deleteCharacterWrapper{
+/* ДОБАВИТЬ ПЕРСОНАЖА */
+/* УДАЛИТЬ ПЕРСОНАЖА */
+
+.deleteCharacterWrapper {
     width: 50%;
     border: 1px solid #e6a902;
     height: auto;
 }
+
+.deleteCharacterTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #e6a902;
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.deleteCharacterListAccounts{
+    
+}
+
+.deleteCharacterHeader {
+    display: flex;
+
+}
+
+.deleteCharacterHeader * {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e6a902;
+    border: 1px solid #e6a902;
+}
+
+.deleteCharacterRow{
+    display: flex;
+}
+
+.deleteCharacterRow *{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e6a902;
+    border: 1px solid #e6a902;
+}
+
+.deleteCharacterButton{
+    background-color: #f75252;
+}
+
+
+/* УДАЛИТЬ ПЕРСОНАЖА */

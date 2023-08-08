@@ -48,7 +48,7 @@ if (!isset($_SESSION['userId'])) {
                 <!-- ДОБАВЛЕНИЯ ПЕРСОНАЖА -->
                 <div class="addCharacterWrapper">
                     <form action="adminScript.php" method="POST" class="addCharacter" enctype="multipart/form-data">
-                        <h1 class="addCharacterTitle">Добавить персонажа в бд</h1>
+                        <h1 class="addCharacterTitle">Добавить персонажа</h1>
                         <input type="text" name="idCharacter" id="idCharacter" placeholder="Id персонажа">
                         <select name="server" id="server">
                             <option value="Grimmag">Grimmag</option>
@@ -77,35 +77,73 @@ if (!isset($_SESSION['userId'])) {
                 <!-- ДОБАВЛЕНИЯ ПЕРСОНАЖА -->
                 <!-- УДАЛЕНИЕ ПЕРСОНАЖА -->
                 <div class="deleteCharacterWrapper">
-                    <form action="" method="POST" class="addCharacter" enctype="multipart/form-data">
-                        <select name="deleteCharacterById" id="deleteCharacterById">
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
-                            <option value="id">id</option>
+                    <h1 class="deleteCharacterTitle">Удалить персонажа</h1>
+                    <div class="deleteCharacterListAccounts">
+                        <div class="deleteCharacterHeader">
+                            <div class="deleteCharacterIdCharacter">Id</div>
+                            <div class="deleteCharacterServer">Сервер</div>
+                            <div class="deleteCharacterClass">Класс</div>
+                            <div class="deleteCharacterEmpty"></div>
+                        </div>
+                        <?php
+                        $host = 'localhost'; // Хост базы данных
+                        $dbname = 'dsosite'; // Имя базы данных
+                        $username = 'root'; // Имя пользователя базы данных
+                        $password = 'root'; // Пароль пользователя базы данных
+                        
+                        // Подключение к базе данных с помощью MySQLi
+                        $mysqli = new mysqli($host, $username, $password, $dbname);
 
-                        </select>
-                        <input type="submit" value="Удалить">
-                    </form>
+                        // Проверка соединения
+                        if ($mysqli->connect_error) {
+                            die("Ошибка подключения к базе данных: " . $mysqli->connect_error);
+                        }
+
+
+                        $sql = "SELECT * FROM accounts";
+
+                        $result = $mysqli->query($sql);
+
+                        // Проверка наличия данных
+                        if ($result->num_rows > 0) {
+                            // Обработка данных
+                            while ($row = $result->fetch_assoc()) {
+
+                                echo "
+                                
+                                
+                                
+                                <div class='deleteCharacterRow'>
+                                <div class='deleteCharacterIdCharacter'>{$row['idCharacter']}</div>
+                                <div class='deleteCharacterServer'>{$row['server']}</div>
+                                <div class='deleteCharacterClass'>{$row['class']}</div>
+                                <a href='adminScript.php?id={$row['idCharacter']}&settings=2' class='deleteCharacterButton'>Удалить</a>
+                            </div>
+                                
+                                
+                                
+                                
+                                ";
+                    
+                            }
+                        }
+
+                        $mysqli->close();
+
+
+
+
+
+                        ?>
+
+
+
+
+
+
+
+
+                    </div>
                 </div>
                 <!-- УДАЛЕНИЕ ПЕРСОНАЖА -->
             </div>
